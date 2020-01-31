@@ -7,6 +7,7 @@ import IconButton from '@material-ui/core/IconButton';
 import MenuIcon from '@material-ui/icons/Menu';
 import GitHubIcon from '@material-ui/icons/GitHub';
 import Link from '@material-ui/core/Link';
+import Tooltip from '@material-ui/core/Tooltip';
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -27,16 +28,23 @@ export default function DenseAppBar() {
     <div className={classes.root}>
       <AppBar position="static">
         <Toolbar variant="dense">
+
           <IconButton edge="start" className={classes.menuButton} color="inherit" aria-label="menu">
             <MenuIcon />
           </IconButton>
+
           <Typography variant="h6" color="inherit">
             Recipe React App
           </Typography>
+
           <div className={classes.grow} />
-          <Link href="https://github.com/anirudhit" color="inherit" target="_blank">
-            <GitHubIcon/>
-          </Link>
+          
+          <Tooltip title="Github repository">
+            <Link href="https://github.com/anirudhit" color="inherit" target="_blank" aria-label="Github repository">
+                <GitHubIcon/>
+            </Link>
+          </Tooltip>
+          
         </Toolbar>
       </AppBar>
     </div>
