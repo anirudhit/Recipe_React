@@ -3,6 +3,8 @@ import './App.css';
 import * as Constants from './constants';
 
 import RecipeHeader from './header/Header';
+import RecipeLayout from './layout/Layout';
+
 const App =() =>{
 
   let api_url = `${Constants.API_URL}?q=chicken&app_id=${Constants.APP_ID}&app_key=${Constants.APP_KEY}&from=0&to=10`;
@@ -14,10 +16,16 @@ const App =() =>{
   return(
     <div className="App">
       <RecipeHeader />
-      <form className="search-form">
-        <input className="search-bar" type="text"/>
-        <button type="submit">Search</button>
-      </form>
+
+      <div className="App-Body">
+        <form className="search-form">
+          <input className="search-bar" type="text"/>
+          <button type="submit">Search</button>
+        </form>
+
+        <RecipeLayout/>
+      </div>
+
     </div>
   )
 }
