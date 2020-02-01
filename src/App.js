@@ -10,9 +10,17 @@ const App =() =>{
 
   let api_url = `${Constants.API_URL}?q=chicken&app_id=${Constants.APP_ID}&app_key=${Constants.APP_KEY}&from=0&to=10`;
 
+  const [recipesList, setRecipesList] = useState([]);
+
   useEffect(() =>{
-    console.log("Use effect usage");
-  });
+    getRecipes();
+  },[]);
+
+  const getRecipes = async () => {
+    const response = await fetch("./search-data.json");
+    const data = await response.json();
+    setRecipesList(data.hits);
+  }
 
   return(
     <div className="App">
@@ -26,7 +34,7 @@ const App =() =>{
 
         <QueryRecipe/>
 
-        <RecipeLayout/>
+        <RecipeLayout recipes={recipesList}/>
       </div>
 
     </div>
