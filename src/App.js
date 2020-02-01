@@ -27,13 +27,7 @@ const App =() =>{
       <RecipeHeader />
 
       <div className="App-Body">
-        <form className="search-form">
-          <input className="search-bar" type="text"/>
-          <button type="submit">Search</button>
-        </form>
-
         <QueryRecipe/>
-
         <RecipeLayout recipes={recipesList}/>
       </div>
 
