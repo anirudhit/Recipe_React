@@ -3,6 +3,7 @@ import './App.css';
 import * as Constants from './constants';
 
 import RecipeHeader from './header/Header';
+import QueryRecipe from './query/SearchRecipe';
 import RecipeLayout from './layout/Layout';
 
 const App =() =>{
@@ -22,6 +23,8 @@ const App =() =>{
           <input className="search-bar" type="text"/>
           <button type="submit">Search</button>
         </form>
+
+        <QueryRecipe/>
 
         <RecipeLayout/>
       </div>
