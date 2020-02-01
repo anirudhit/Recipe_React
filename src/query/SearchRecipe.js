@@ -13,7 +13,7 @@ const useStyles = makeStyles(theme => ({
     padding: '2px 4px',
     display: 'flex',
     alignItems: 'center',
-    width: 425,
+    width: 300,
     margin: '25px auto 45px auto',
   },
   input: {
@@ -24,8 +24,8 @@ const useStyles = makeStyles(theme => ({
     padding: 10,
   },
   searchButton: {
-    padding: '12px 15px',
-    margin: '-7px -5px -7px 5px',
+    padding: '6px',
+    margin: '-7px 2px',
   },
   divider: {
     height: 28,
