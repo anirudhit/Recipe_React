@@ -33,7 +33,7 @@ const useStyles = makeStyles(theme => ({
   },
 }));
 
-export default function CustomizedInputBase() {
+export default function CustomizedInputBase({query}) {
   const classes = useStyles();
 
   return (
@@ -45,6 +45,7 @@ export default function CustomizedInputBase() {
         className={classes.input}
         placeholder="Search recipe"
         inputProps={{ 'aria-label': 'search recipe' }}
+        value={query}
       />
       <IconButton type="submit" className={classes.iconButton} aria-label="search">
         <SearchIcon />
