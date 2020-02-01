@@ -57,13 +57,10 @@ export default function RecipeReviewCard({label,image,url,
   totalWeight,totalTime}) {
   const classes = useStyles();
   const [expanded, setExpanded] = React.useState(false);
-
   const handleExpandClick = () => {
     setExpanded(!expanded);
   };
-
   const today = getCurrentDate();
-  console.log(getCurrentDate())
 
   return (
     <Card className={classes.card}>
