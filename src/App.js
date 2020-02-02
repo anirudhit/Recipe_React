@@ -11,7 +11,7 @@ const App =() =>{
   const [recipesList, setRecipesList] = useState([]);
   const [searchQuery, setSearchQuery] = useState("");
 
-  let api_url = `${Constants.API_URL}?q=chicken&app_id=${Constants.APP_ID}&app_key=${Constants.APP_KEY}&from=0&to=10`;
+  let api_url = `${Constants.API_URL}?q=${searchQuery}&app_id=${Constants.APP_ID}&app_key=${Constants.APP_KEY}&from=0&to=10`;
 
   useEffect(() =>{
     setSearchQuery("chicken");
