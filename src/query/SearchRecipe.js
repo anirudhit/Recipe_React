@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import Paper from '@material-ui/core/Paper';
 import InputBase from '@material-ui/core/InputBase';
@@ -33,8 +33,20 @@ const useStyles = makeStyles(theme => ({
   },
 }));
 
-export default function CustomizedInputBase({query}) {
+export default function CustomizedInputBase({onSearchRecipeClick}) {
   const classes = useStyles();
+  const [search, setSearch] = useState('');
+
+  const updateSearch = e => {
+    setSearch(e.target.value);
+  };
+
+  const getSearch = e => {
+    if(search.length){
+      onSearchRecipeClick(search);
+      setSearch('');
+    }
+  };
 
   return (
     <Paper component="form" className={classes.root}>
@@ -45,13 +57,15 @@ export default function CustomizedInputBase({query}) {
         className={classes.input}
         placeholder="Search recipe"
         inputProps={{ 'aria-label': 'search recipe' }}
-        value={query}
+        value={search}
+        onChange={updateSearch}
       />
-      <IconButton type="submit" className={classes.iconButton} aria-label="search">
+      <IconButton  onClick={getSearch} className={classes.iconButton} aria-label="search">
         <SearchIcon />
       </IconButton>
       <Divider className={classes.divider} orientation="vertical" />
-      <Button color="primary" variant="contained" className={classes.searchButton} aria-label="search recipe">
+      <Button color="primary" variant="contained" className={classes.searchButton} aria-label="search recipe"
+        onClick={getSearch}>
         Search
       </Button>
     </Paper>
